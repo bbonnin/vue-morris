@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue-morris examples</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div class="page-header">
+        <h2>Vue-Morris</h2>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 panel panel-default">
+          <div class="panel-body">
+            <donut id="donut" :data="someData" resize="true"></donut>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1 panel panel-default">
+          <div class="panel-body">
+            <donut id="donut2" data='[{ "label": "Happy", "value": 50 }, { "label": "Angry", "value": 10 }]'></donut>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 panel panel-default">
+          <div class="panel-body">
+            <donut id="donut3" data='[{ "label": "Happy", "value": 50 }, { "label": "Angry", "value": 10 }]' :resize="'true'"></donut>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1 panel panel-default">
+          <div class="panel-body">
+            <donut id="donut4" data='[{ "label": "Happy", "value": 50 }, { "label": "Angry", "value": 10 }]' resize="false"></donut>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./dist/examples.js"></script>
+  </body>
+</html>
