@@ -1,19 +1,26 @@
 import Vue from 'vue'
-import { Donut } from '../src/index'
+import { DonutChart, BarChart } from '../src/index'
 
 new Vue({
   el: '#app',
 
   data: {
-    someData: [
-      { label: 'Red', value: 300, color: '#FF6384' },
-      { label: 'Blue', value: 50, color: '#36A2EB' },
-      { label: 'Yellow', value: 100, color: '#FFCE56' }
+    donutData: [
+      { label: 'Red', value: 300 },
+      { label: 'Blue', value: 50 },
+      { label: 'Yellow', value: 100 }
+    ],
+
+    barData: [
+      { year: 2013, and: 10, ios: 5, win: 2 },
+      { year: 2014, and: 10, ios: 15, win: 3 },
+      { year: 2015, and: 20, ios: 25, win: 2 },
+      { year: 2016, and: 30, ios: 20, win: 1 },
     ]
   },
 
   components: {
-    Donut
+    DonutChart, BarChart
   }
 
 })

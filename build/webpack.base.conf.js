@@ -29,21 +29,11 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'vue-style-loader!css-loader'
       }
     ]
-  },
-  /*resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.common.js',
-      'jquery': 'jquery/src/jquery.js',
-      'raphael': 'raphael/raphael.js'
-    }
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      Raphael: 'raphael'
-    })
-  ],*/
+  }
 }

@@ -5,35 +5,90 @@
     <title>Vue-morris examples</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css">
+
   </head>
   <body>
+    <a href="https://github.com/bbonnin/vue-morris"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
     <div id="app" class="container">
       <div class="page-header">
         <h2>Vue-Morris</h2>
+        <p>This component wraps the charts library <a href="http://morrisjs.github.io/morris.js/">Morris.js</a>. As the attributes used in this component have the same name than in Morris.js, you will find more details in its documentation.</p>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-5 panel panel-default">
+
+        <div class="col-xs-12 panel panel-default">
           <div class="panel-body">
-            <donut id="donut" :data="someData" resize="true"></donut>
+            <div class="col-sm-6">
+              <h3>Bar Chart</h3>
+              <bar-chart 
+                id="bar" :data="barData" xkey="year" ykeys='[ "and", "ios", "win" ]' resize="true"
+                labels='[ "Android", "iOS", "Windows" ]' bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]'
+                grid="true" grid-text-weight="bold" :hover-callback="toto">
+              </bar-chart>
+            </div>
+            <div class="col-sm-6">
+              <pre style="border:none; background-color:white">
+                <code class="xml">
+&lt;bar-chart 
+  id="bar"
+  data='[
+      { "year": 2013, "and": 10, "ios": 5, "win": 2 },
+      { "year": 2014, "and": 10, "ios": 15, "win": 3 },
+      { "year": 2015, "and": 20, "ios": 25, "win": 2 },
+      { "year": 2016, "and": 30, "ios": 20, "win": 1 },
+    ]'
+  xkey="year"
+  ykeys='[ "and", "ios", "win" ]'
+  bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]' 
+  grid="true"
+  grid-text-weight="bold"
+  resize="true"&gt;
+&lt;/bar-chart&gt;
+                </code>
+              </pre>
+            </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-5 col-sm-offset-1 panel panel-default">
+
+        <div class="col-xs-12 panel panel-default">
           <div class="panel-body">
-            <donut id="donut2" data='[{ "label": "Happy", "value": 50 }, { "label": "Angry", "value": 10 }]'></donut>
+            <div class="col-sm-6">
+              <h3>Donut Chart</h3>
+              <donut-chart id="donut" :data="donutData" colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]' resize="true"></donut-chart>
+            </div>
+            <div class="col-sm-6">
+              <pre style="border:none; background-color:white">
+                <code class="xml">
+&lt;donut-chart 
+  id="donut" 
+  :data="donutData" 
+  colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]' 
+  resize="true"&gt;
+&lt;/donut-chart&gt;
+
+&lt;script&gt;
+new Vue({
+  data: {
+    donutData: [
+      { label: 'Red', value: 300 },
+      { label: 'Blue', value: 50 },
+      { label: 'Yellow', value: 100 }
+    ]
+  },
+  components: { DonutChart }
+})
+&lt;/script&gt;
+                </code>
+              </pre>
+            </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-5 panel panel-default">
-          <div class="panel-body">
-            <donut id="donut3" data='[{ "label": "Happy", "value": 50 }, { "label": "Angry", "value": 10 }]' :resize="'true'"></donut>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-sm-offset-1 panel panel-default">
-          <div class="panel-body">
-            <donut id="donut4" data='[{ "label": "Happy", "value": 50 }, { "label": "Angry", "value": 10 }]' resize="false"></donut>
-          </div>
-        </div>
+        
       </div>
     </div>
     <script src="./dist/examples.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

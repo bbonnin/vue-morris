@@ -6,9 +6,10 @@
 import Raphael from 'raphael/raphael'
 global.Raphael = Raphael
 import 'morris.js/morris'
+import Converter from '../util/converter'
 
 export default {
-  name: 'donut',
+  name: 'donut-chart',
 
   data () {
     return {
@@ -16,47 +17,31 @@ export default {
     }
   },
 
-  computed: {
-    chartData () {
-      if (typeof this.data === 'string') {
-        return JSON.parse(this.data)
-      }
-      return this.data
-    },
-
-    chartResize () {
-      if (typeof this.resize === 'string') {
-        return this.resize === 'true'
-      }
-      return false
-    }
-  },
-
   watch: {
     data (val) {
       this.$nextTick(() => {
-        this.chart.setData(this.data)
+        this.chart.setData(Converter.toObject(this.data))
       })
     }
   },
 
   props: {
     id: { type: String, required: true }, 
-    data: { required: true },
-    colors: { required: false },
+    data: { type: [ String, Array ], required: true },
+    colors: { type: [ String, Array ], required: false },
     formatter: { type: Function, required: false },
-    resize: { required: false }
+    resize: { type: [ Boolean, String ], required: false }
   },
 
   mounted () {
     let options = {
       element: this.id,
-      data: this.chartData,
-      resize: this.chartResize
+      data: Converter.toObject(this.data),
+      resize: Converter.toBoolean(this.resize)
     }
 
     if (this.colors) {
-      options.colors = this.colors
+      options.colors = Converter.toObject(this.colors)
     }
 
     if (this.formatter) {
