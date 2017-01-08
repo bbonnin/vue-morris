@@ -8,6 +8,7 @@ global.Raphael = Raphael
 import 'morris.js/morris'
 import 'morris.js/morris.css'
 import Converter from '../util/converter'
+import ChartProps from './chart-props'
 
 export default {
   name: 'bar-chart',
@@ -26,24 +27,7 @@ export default {
     }
   },
 
-  props: {
-    id: { type: String, required: true }, 
-    data: { type: [ String, Array ], required: true },
-    barColors: { type: [ String, Array ], required: false },
-    xkey: { type: String, required: false, default: 'key' },
-    ykeys: { type: [ String, Array ], required: false, default: [ 'value' ] },
-    labels: { type: [ String, Array ], required: false, default: [ 'Value' ] },
-    hoverCallback: { type: Function, required: false },
-    grid: { type: [ Boolean, String ], required: false, default: true },
-    axes: { type: [ Boolean, String ], required: false, default: true },
-    hideHover: { type: String, required: false },
-    stacked: { type: [ Boolean, String ], required: false },
-    resize: { type: [ Boolean, String ], required: false },
-    gridTextColor: { type: String, required: false, default: '#888' },
-    gridTextSize: { type: [ Number, String ], required: false, default: 12 },
-    gridTextFamily: { type: String, required: false, default: 'sans-serif' },
-    gridTextWeight: { type: String, required: false, default: 'normal' }
-  },
+  mixins: [ ChartProps.bar ],
 
   mounted () {
     let options = {

@@ -1,8 +1,10 @@
-import DonutChart from './components/DonutChart.vue'
-import BarChart from './components/BarChart.vue'
+import DonutChart from './components/donut-chart.vue'
+import BarChart from './components/bar-chart.vue'
+import LineChart from './components/line-chart.vue'
+import AreaChart from './components/area-chart.vue'
 
 const VueMorris = {
-  DonutChart, BarChart
+  DonutChart, BarChart, LineChart, AreaChart
 }
 
 module.exports = VueMorris

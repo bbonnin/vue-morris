@@ -24,7 +24,7 @@
               <bar-chart 
                 id="bar" :data="barData" xkey="year" ykeys='[ "and", "ios", "win" ]' resize="true"
                 labels='[ "Android", "iOS", "Windows" ]' bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]'
-                grid="true" grid-text-weight="bold" :hover-callback="toto">
+                grid="true" grid-text-weight="bold">
               </bar-chart>
             </div>
             <div class="col-sm-6">
@@ -33,10 +33,10 @@
 &lt;bar-chart 
   id="bar"
   data='[
-      { "year": 2013, "and": 10, "ios": 5, "win": 2 },
-      { "year": 2014, "and": 10, "ios": 15, "win": 3 },
-      { "year": 2015, "and": 20, "ios": 25, "win": 2 },
-      { "year": 2016, "and": 30, "ios": 20, "win": 1 },
+      { "year": "2013", "and": 10, "ios": 5, "win": 2 },
+      { "year": "2014", "and": 10, "ios": 15, "win": 3 },
+      { "year": "2015", "and": 20, "ios": 25, "win": 2 },
+      { "year": "2016", "and": 30, "ios": 20, "win": 1 },
     ]'
   xkey="year"
   ykeys='[ "and", "ios", "win" ]'
@@ -45,6 +45,40 @@
   grid-text-weight="bold"
   resize="true"&gt;
 &lt;/bar-chart&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 panel panel-default">
+          <div class="panel-body">
+            <div class="col-sm-6">
+              <h3>Line Chart <small>(with values modified every 5 seconds)</small></h3>
+              <line-chart 
+                id="line" :data="lineData" xkey="year" ykeys='[ "a", "b" ]' resize="true"
+                labels='[ "Serie A", "Serie B" ]' line-colors='[ "#FF6384", "#36A2EB" ]'
+                grid="true" grid-text-weight="bold">
+              </line-chart>
+            </div>
+            <div class="col-sm-6">
+              <pre style="border:none; background-color:white">
+                <code class="xml">
+&lt;line-chart 
+  id="line"
+  data='[
+      { year: "2013", a: 10, b: 5 },
+      { year: "2014", a: 40, b: 15 },
+      { year: "2015", a: 20, b: 25 },
+      { year: "2016", a: 30, b: 20 },
+    ]'
+  xkey="year"
+  ykeys='[ "a", "b" ]'
+  line-colors='[ "#FF6384", "#36A2EB" ]' 
+  grid="true"
+  grid-text-weight="bold"
+  resize="true"&gt;
+&lt;/line-chart&gt;
                 </code>
               </pre>
             </div>
@@ -79,6 +113,40 @@ new Vue({
   components: { DonutChart }
 })
 &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 panel panel-default">
+          <div class="panel-body">
+            <div class="col-sm-6">
+              <h3>Area Chart</h3>
+              <area-chart 
+                id="area" :data="areaData" xkey="year" ykeys='[ "a", "b" ]' resize="true"
+                labels='[ "Serie A", "Serie B" ]' line-colors='[ "#FF6384", "#36A2EB" ]'
+                grid="true" grid-text-weight="bold">
+              </line-chart>
+            </div>
+            <div class="col-sm-6">
+              <pre style="border:none; background-color:white">
+                <code class="xml">
+&lt;area-chart 
+  id="area"
+  data='[
+      { year: "2013", a: 30, b: 5 },
+      { year: "2014", a: 25, b: 15 },
+      { year: "2015", a: 29, b: 25 },
+      { year: "2016", a: 50, b: 20 },
+    ]'
+  xkey="year"
+  ykeys='[ "a", "b" ]'
+  line-colors='[ "#FF6384", "#36A2EB" ]' 
+  grid="true"
+  grid-text-weight="bold"
+  resize="true"&gt;
+&lt;/line-chart&gt;
                 </code>
               </pre>
             </div>

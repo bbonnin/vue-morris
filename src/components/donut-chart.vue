@@ -6,7 +6,9 @@
 import Raphael from 'raphael/raphael'
 global.Raphael = Raphael
 import 'morris.js/morris'
+import 'morris.js/morris.css'
 import Converter from '../util/converter'
+import ChartProps from './chart-props'
 
 export default {
   name: 'donut-chart',
@@ -25,13 +27,7 @@ export default {
     }
   },
 
-  props: {
-    id: { type: String, required: true }, 
-    data: { type: [ String, Array ], required: true },
-    colors: { type: [ String, Array ], required: false },
-    formatter: { type: Function, required: false },
-    resize: { type: [ Boolean, String ], required: false }
-  },
+  mixins: [ ChartProps.donut ],
 
   mounted () {
     let options = {
