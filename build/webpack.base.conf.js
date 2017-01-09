@@ -5,8 +5,10 @@ module.exports = {
     'vue-morris': './src/index.js'
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
+    library: 'VueMorris',
+    libraryTarget: 'amd',
     filename: process.env.NODE_ENV === 'production' ? '[name].min.js' : '[name].js'
   },
   module: {

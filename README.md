@@ -13,8 +13,43 @@ npm install vue-morris --save
 ```
 
 ## Examples
+For a complete example, see files in `examples` directory or the project: https://github.com/bbonnin/vue-morris-example.
 
-See files in `examples` directory.
+* Import the component
+
+```javascript
+// Do not forget to import raphael
+import Raphael from 'raphael/raphael'
+global.Raphael = Raphael
+
+import Vue from 'vue'
+import { DonutChart } from 'vue-morris'
+
+new Vue({
+  el: '#app',
+
+  data: {
+    donutData: [
+      { label: 'Red', value: 300 },
+      { label: 'Blue', value: 50 },
+      { label: 'Yellow', value: 100 }
+    ],
+
+    components: {
+    DonutChart, BarChart, LineChart, AreaChart
+  }
+})
+```
+
+* Use the component in html
+```html
+<donut-chart 
+  id="donut" 
+  :data="donutData" 
+  colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]' 
+  resize="true">
+</donut-chart>
+```
 
 * Bar chart
 ![bar chart](img/barchart.png)
@@ -27,6 +62,7 @@ See files in `examples` directory.
 
 * Donut chart
 ![donut chart](img/donutchart.png)
+
 
 ## Build Setup
 

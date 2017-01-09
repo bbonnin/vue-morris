@@ -1,5 +1,9 @@
+
+import Raphael from 'raphael/raphael'
+global.Raphael = Raphael
+
 import Vue from 'vue'
-import { DonutChart, BarChart, LineChart, AreaChart } from '../src/index'
+import { DonutChart, BarChart, LineChart, AreaChart } from '../dist/vue-morris.min.js'
 
 new Vue({
   el: '#app',

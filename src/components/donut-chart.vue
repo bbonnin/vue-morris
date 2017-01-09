@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import Raphael from 'raphael/raphael'
-global.Raphael = Raphael
 import 'morris.js/morris'
 import 'morris.js/morris.css'
 import Converter from '../util/converter'
@@ -12,6 +10,8 @@ import ChartProps from './chart-props'
 
 export default {
   name: 'donut-chart',
+
+  mixins: [ ChartProps.donut ],
 
   data () {
     return {
@@ -27,8 +27,7 @@ export default {
     }
   },
 
-  mixins: [ ChartProps.donut ],
-
+  
   mounted () {
     let options = {
       element: this.id,

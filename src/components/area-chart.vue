@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import Raphael from 'raphael/raphael'
-global.Raphael = Raphael
 import 'morris.js/morris'
 import 'morris.js/morris.css'
 import Converter from '../util/converter'
@@ -51,8 +49,6 @@ export default {
     if (this.xLabels) {
       options.xLabels = this.xLabels
     }
-
-    console.log(options.data)
 
     this.chart = Morris.Area(options)
   }
