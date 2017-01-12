@@ -6,7 +6,7 @@
 import 'morris.js/morris'
 import 'morris.js/morris.css'
 import Converter from '../util/converter'
-import ChartProps from './chart-props'
+import ChartProps from './chart-mixins'
 
 export default {
   name: 'bar-chart',
@@ -42,16 +42,13 @@ export default {
       gridTextColor: this.gridTextColor,
       gridTextSize: Converter.toInt(this.gridTextSize),
       gridTextFamily: this.gridTextFamily,
-      gridTextWeight: this.gridTextWeight
+      gridTextWeight: this.gridTextWeight,
+      lineWidth: this.lineWidth,
+      pointSize: this.pointSize
     }
 
-    if (this.barColors) {
-      options.barColors = Converter.toObject(this.barColors)
-    }
-
-    if (this.hoverCallback) {
-      options.hoverCallback = this.hoverCallback
-    }
+    this.addOptionAsObject('barColors', options)
+    this.addOption('hoverCallback', options)
 
     this.chart = Morris.Bar(options)
   }

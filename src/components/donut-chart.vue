@@ -6,7 +6,7 @@
 import 'morris.js/morris'
 import 'morris.js/morris.css'
 import Converter from '../util/converter'
-import ChartProps from './chart-props'
+import ChartProps from './chart-mixins'
 
 export default {
   name: 'donut-chart',
@@ -26,7 +26,6 @@ export default {
       })
     }
   },
-
   
   mounted () {
     let options = {
@@ -35,13 +34,8 @@ export default {
       resize: Converter.toBoolean(this.resize)
     }
 
-    if (this.colors) {
-      options.colors = Converter.toObject(this.colors)
-    }
-
-    if (this.formatter) {
-      options.formatter = this.formatter
-    }
+    this.addOptionAsObject('colors', options)
+    this.addOption('formatter', options)
 
     this.chart = Morris.Donut(options)
   }

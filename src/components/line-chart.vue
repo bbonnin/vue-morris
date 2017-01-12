@@ -6,7 +6,7 @@
 import 'morris.js/morris'
 import 'morris.js/morris.css'
 import Converter from '../util/converter'
-import ChartProps from './chart-props'
+import ChartProps from './chart-mixins'
 
 export default {
   name: 'line-chart',
@@ -39,16 +39,32 @@ export default {
       gridTextColor: this.gridTextColor,
       gridTextSize: Converter.toInt(this.gridTextSize),
       gridTextFamily: this.gridTextFamily,
-      gridTextWeight: this.gridTextWeight
+      gridTextWeight: this.gridTextWeight,
+      lineWidth: this.lineWidth,
+      pointSize: this.pointSize,
+      ymax: this.ymax,
+      ymin: this.ymin,
+      smooth: Converter.toBoolean(this.smooth),
+      parseTime: Converter.toBoolean(this.parseTime),
+      postUnits: this.postUnits,
+      preUnits: this.preUnits,
+      xLabelAngle: this.xLabelAngle,
+      goalStrokeWidth: this.goalStrokeWidth,
+      eventStrokeWidth: this.eventStrokeWidth,
+      fillOpacity: this.fillOpacity
     }
 
-    if (this.lineColors) {
-      options.lineColors = Converter.toObject(this.lineColors)
-    }
-
-    if (this.xLabels) {
-      options.xLabels = this.xLabels
-    }
+    this.addOptionAsObject('lineColors', options)
+    this.addOption('xLabels', options)
+    this.addOptionAsObject('pointFillColors', options)
+    this.addOptionAsObject('pointStrokeColors', options)
+    this.addOption('dateFormat', options)
+    this.addOption('xLabelFormat', options)
+    this.addOption('yLabelFormat', options)
+    this.addOptionAsObject('goals', options)
+    this.addOptionAsObject('goalLineColors', options)
+    this.addOptionAsObject('events', options)
+    this.addOptionAsObject('eventLineColors', options)
 
     this.chart = Morris.Line(options)
   }

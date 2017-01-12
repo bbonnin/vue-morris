@@ -2,6 +2,9 @@ var webpack = require('webpack')
 var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 
+baseWebpackConfig.output.library = 'VueMorris'
+baseWebpackConfig.output.libraryTarget = 'amd'
+
 module.exports = merge(baseWebpackConfig, {
 
   devtool: '#source-map',

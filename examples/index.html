@@ -61,7 +61,7 @@
               <line-chart 
                 id="line" :data="lineData" xkey="year" ykeys='[ "a", "b" ]' resize="true"
                 labels='[ "Serie A", "Serie B" ]' line-colors='[ "#FF6384", "#36A2EB" ]'
-                grid="true" grid-text-weight="bold">
+                grid="true" grid-text-weight="bold" events='[ "2015 " ]' event-stroke-width="5" event-line-colors='[ "#ff0000" ]'>
               </line-chart>
             </div>
             <div class="col-sm-6">
@@ -80,6 +80,9 @@
   line-colors='[ "#FF6384", "#36A2EB" ]' 
   grid="true"
   grid-text-weight="bold"
+  events='[ "2015 " ]'
+  event-stroke-width="5"
+  event-line-colors='[ "#ff0000" ]'
   resize="true"&gt;
 &lt;/line-chart&gt;
                 </code>
@@ -126,11 +129,11 @@ new Vue({
           <div class="panel-body">
             <div class="col-sm-6">
               <h3>Area Chart</h3>
-              <area-chart 
+              <area-chart
                 id="area" :data="areaData" xkey="year" ykeys='[ "a", "b" ]' resize="true"
                 labels='[ "Serie A", "Serie B" ]' line-colors='[ "#FF6384", "#36A2EB" ]'
-                grid="true" grid-text-weight="bold">
-              </line-chart>
+                grid="true" grid-text-weight="bold" x-label-angle="45">
+              </area-chart>
             </div>
             <div class="col-sm-6">
               <pre style="border:none; background-color:white">
@@ -148,6 +151,7 @@ new Vue({
   line-colors='[ "#FF6384", "#36A2EB" ]' 
   grid="true"
   grid-text-weight="bold"
+  x-label-angle="45"
   resize="true"&gt;
 &lt;/line-chart&gt;
                 </code>
