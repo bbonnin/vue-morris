@@ -3,6 +3,8 @@
 > Vue.js components wrapping Morris.js lib
 > 
 > See http://morrisjs.github.io/morris.js/ for documentation
+
+> Depends on Vue.js v2.1.0+
  
 ## Install
 
