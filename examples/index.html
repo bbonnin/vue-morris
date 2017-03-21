@@ -60,7 +60,7 @@
               <h3>Line Chart <small>(with values modified every 5 seconds)</small></h3>
               <line-chart 
                 id="line" :data="lineData" xkey="year" ykeys='[ "a", "b" ]' resize="true"
-                labels='[ "Serie A", "Serie B" ]' line-colors='[ "#FF6384", "#36A2EB" ]'
+                labels='[ "Serie A", "Serie B" ]' line-colors='[ "#FF6384", "#36A2EB" ]' :hover-callback="onLineHover"
                 grid="true" grid-text-weight="bold" events='[ "2015 " ]' event-stroke-width="5" event-line-colors='[ "#ff0000" ]'>
               </line-chart>
             </div>

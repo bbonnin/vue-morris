@@ -55,6 +55,11 @@ new Vue({
   methods: {
     rand (limit) {
       return Math.round(Math.random() * limit)
+    },
+
+    onLineHover (index, options, content, row) {
+      console.log('onLineHover: ', index, options, content, row)
+      return content
     }
   }
 

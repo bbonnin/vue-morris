@@ -121,7 +121,8 @@ const LineProps = {
   events: Props.events,
   eventStrokeWidth: Props.eventStrokeWidth,
   eventLineColors: Props.eventLineColors,
-  fillOpacity: Props.fillOpacity
+  fillOpacity: Props.fillOpacity,
+  hoverCallback: Props.hoverCallback
 }
 
 /**

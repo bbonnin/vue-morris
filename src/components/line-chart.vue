@@ -65,6 +65,7 @@ export default {
     this.addOptionAsObject('goalLineColors', options)
     this.addOptionAsObject('events', options)
     this.addOptionAsObject('eventLineColors', options)
+    this.addOption('hoverCallback', options)
 
     this.chart = Morris.Line(options)
   }
