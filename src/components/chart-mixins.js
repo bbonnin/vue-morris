@@ -108,6 +108,7 @@ const LineProps = {
   ymax: Props.ymax,
   ymin: Props.ymin,
   smooth: Props.smooth,
+  hideHover: Props.hideHover,
   parseTime: Props.parseTime,
   postUnits: Props.postUnits,
   preUnits: Props.preUnits,

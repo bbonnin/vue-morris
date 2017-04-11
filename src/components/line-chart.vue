@@ -45,6 +45,7 @@ export default {
       ymax: this.ymax,
       ymin: this.ymin,
       smooth: Converter.toBoolean(this.smooth),
+      hideHover: this.hideHover,
       parseTime: Converter.toBoolean(this.parseTime),
       postUnits: this.postUnits,
       preUnits: this.preUnits,

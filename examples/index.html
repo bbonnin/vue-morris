@@ -27,7 +27,7 @@
               <bar-chart 
                 id="bar" :data="barData" xkey="year" ykeys='[ "and", "ios", "win" ]' resize="true"
                 labels='[ "Android", "iOS", "Windows" ]' bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]'
-                grid="true" grid-text-weight="bold">
+                grid="true" grid-text-weight="bold" hide-hover="auto">
               </bar-chart>
             </div>
             <div class="col-sm-6">
@@ -46,7 +46,8 @@
   bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]' 
   grid="true"
   grid-text-weight="bold"
-  resize="true"&gt;
+  resize="true"
+  hide-hover="auto"&gt;
 &lt;/bar-chart&gt;
                 </code>
               </pre>
@@ -132,7 +133,7 @@ new Vue({
               <area-chart
                 id="area" :data="areaData" xkey="year" ykeys='[ "a", "b" ]' resize="true"
                 labels='[ "Serie A", "Serie B" ]' line-colors='[ "#FF6384", "#36A2EB" ]'
-                grid="true" grid-text-weight="bold" x-label-angle="45">
+                grid="true" grid-text-weight="bold" x-label-angle="45" hide-hover="always">
               </area-chart>
             </div>
             <div class="col-sm-6">
@@ -152,6 +153,7 @@ new Vue({
   grid="true"
   grid-text-weight="bold"
   x-label-angle="45"
+  hide-hover="always"
   resize="true"&gt;
 &lt;/area-chart&gt;
                 </code>
