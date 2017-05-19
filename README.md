@@ -14,6 +14,17 @@ Use npm
 npm install vue-morris --save
 ```
 
+Do not forget to declare jQuery. For example, if you are using Webpack, you should have something like that in your `webpack.config.js` 
+
+```javascript
+resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.common.js',
+      'jquery': 'jquery/src/jquery.js'
+    }
+  },
+```
+
 ## Examples
 For a complete example, see files in `examples` directory or the project: https://github.com/bbonnin/vue-morris-example.
 
