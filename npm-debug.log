@@ -1,0 +1,31 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'version',
+1 verbose cli   'patch' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.1
+4 info git [ 'status', '--porcelain' ]
+5 verbose stack Error: Git working directory not clean.
+5 verbose stack M dist/vue-morris.min.js
+5 verbose stack M dist/vue-morris.min.js.map
+5 verbose stack M src/util/converter.js
+5 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\version.js:247:19
+5 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\utils\no-progress-while-running.js:21:8
+5 verbose stack     at ChildProcess.exithandler (child_process.js:195:7)
+5 verbose stack     at emitTwo (events.js:106:13)
+5 verbose stack     at ChildProcess.emit (events.js:191:7)
+5 verbose stack     at maybeClose (internal/child_process.js:886:16)
+5 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+6 verbose cwd C:\Users\bbonnin.VISIONOBJECTS\Documents\Perso\vue-morris
+7 error Windows_NT 10.0.15063
+8 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "version" "patch"
+9 error node v6.10.1
+10 error npm  v3.10.10
+11 error Git working directory not clean.
+11 error M dist/vue-morris.min.js
+11 error M dist/vue-morris.min.js.map
+11 error M src/util/converter.js
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
