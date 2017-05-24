@@ -1,19 +1,19 @@
 const Converter = {
-  toObject (data) {
+  toObject = function (data) {
     if (typeof data === 'string') {
       return JSON.parse(data)
     }
     return data
   },
 
-  toBoolean (data) {
+  toBoolean = function (data) {
     if (typeof data === 'string') {
       return data === 'true'
     }
     return data
   },
 
-  toInt (data) {
+  toInt = function(data) {
     if (typeof data === 'string') {
       return parseInt(data)
     }
