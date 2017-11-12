@@ -22,6 +22,10 @@ export default {
   watch: {
     data (val) {
       this.$nextTick(() => {
+        if (this['colors']) {
+          this.chart.options['colors'] = Converter.toObject(this['colors'])
+        }
+
         this.chart.setData(Converter.toObject(this.data))
       })
     }

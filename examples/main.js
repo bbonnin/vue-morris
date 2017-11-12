@@ -5,6 +5,8 @@ global.Raphael = Raphael
 import Vue from 'vue'
 import { DonutChart, BarChart, LineChart, AreaChart } from '../dist/vue-morris.min.js'
 
+const COLORS = [ '#42B8E0', '#33658A', '#F6AE2D', '#F26419', '#0E3A53' ]
+
 new Vue({
   el: '#app',
 
@@ -34,7 +36,11 @@ new Vue({
       { year: '2014', a: 25, b: 15 },
       { year: '2015', a: 29, b: 25 },
       { year: '2016', a: 50, b: 20 },
-    ]
+    ],
+
+    series: [ 'a', 'b' ],
+    labels: [ 'Serie A', 'Serie B' ],
+    lineColors: [ COLORS[0], COLORS[1] ],
   },
 
   components: {
@@ -43,22 +49,57 @@ new Vue({
 
   mounted () {
     setInterval(() => {
-      this.lineData = [
-        { year: '2013', a: this.rand(100), b: this.rand(100) },
-        { year: '2014', a: this.rand(100), b: this.rand(100) },
-        { year: '2015', a: this.rand(100), b: this.rand(100) },
-        { year: '2016', a: this.rand(100), b: this.rand(100) },
-      ]
+      const years = []
+
+      this.series = []
+      this.labels = []
+      this.lineColors = []
+      for (let i = 0; i < this.rand(4) + 1; i++) {
+          this.series.push(String.fromCharCode(i + 97))
+          this.labels.push('Serie ' + String.fromCharCode(i + 65))
+          this.lineColors.push(COLORS[i])
+      }
+
+      this.lineData = []
+
+      const nbYears = this.rand(4) + 2
+
+      for (let i = 0; i < nbYears; i++) {
+        let year = 0
+        do {
+          year = this.rand(18) + 2000;
+        }
+        while (years.includes(year));
+
+        years.push(year)
+
+        const data = { year: '' + year };
+
+        for (let serie in this.series) {
+          data[this.series[serie]] = this.rand(100)
+        }
+        
+        this.lineData.push(data)
+      }
+
+      console.log('Nb years', nbYears)
+      console.log('Series', this.series)
+      /*this.lineData = [
+        { year: '' + (this.rand(18) + 2000), a: this.rand(100), b: this.rand(100) },
+        { year: '' + (this.rand(18) + 2000), a: this.rand(100), b: this.rand(100) },
+        { year: '' + (this.rand(18) + 2000), a: this.rand(100), b: this.rand(100) },
+        { year: '' + (this.rand(18) + 2000), a: this.rand(100), b: this.rand(100) },
+      ]*/
     }, 5000)
   },
 
   methods: {
     rand (limit) {
-      return Math.round(Math.random() * limit)
+      return Math.ceil(Math.random() * limit)
     },
 
     onLineHover (index, options, content, row) {
-      console.log('onLineHover: ', index, options, content, row)
+      // console.log('onLineHover: ', index, options, content, row)
       return content
     }
   }
