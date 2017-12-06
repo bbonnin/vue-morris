@@ -11,32 +11,13 @@ new Vue({
   el: '#app',
 
   data: {
-    donutData: [
-      { label: 'Red', value: 300 },
-      { label: 'Blue', value: 50 },
-      { label: 'Yellow', value: 100 }
-    ],
+    donutData: [],
 
-    barData: [
-      { year: '2013', and: 10, ios: 5, win: 2 },
-      { year: '2014', and: 10, ios: 15, win: 3 },
-      { year: '2015', and: 20, ios: 25, win: 2 },
-      { year: '2016', and: 30, ios: 20, win: 1 },
-    ],
+    barData: [],
 
-    lineData: [
-      { year: '2013', a: 10, b: 5 },
-      { year: '2014', a: 40, b: 15 },
-      { year: '2015', a: 20, b: 25 },
-      { year: '2016', a: 30, b: 20 },
-    ],
+    lineData: [],
 
-    areaData: [
-      { year: '2013', a: 30, b: 5 },
-      { year: '2014', a: 25, b: 15 },
-      { year: '2015', a: 29, b: 25 },
-      { year: '2016', a: 50, b: 20 },
-    ],
+    areaData: [],
 
     series: [ 'a', 'b' ],
     labels: [ 'Serie A', 'Serie B' ],
@@ -49,6 +30,29 @@ new Vue({
 
   mounted () {
     setInterval(() => {
+
+      this.donutData = [
+        { label: 'Red', value: 300 },
+        { label: 'Blue', value: 50 },
+        { label: 'Yellow', value: 100 }
+      ]
+
+      this.barData = [
+        { year: '2013', and: 10, ios: 5, win: 2 },
+        { year: '2014', and: 10, ios: 15, win: 3 },
+        { year: '2015', and: 20, ios: 25, win: 2 },
+        { year: '2016', and: 30, ios: 20, win: 1 },
+      ]
+
+      this.areaData = [
+        { year: '2013', a: 30, b: 5 },
+        { year: '2014', a: 25, b: 15 },
+        { year: '2015', a: 29, b: 25 },
+        { year: '2016', a: 50, b: 20 },
+      ]
+
+
+
       const years = []
 
       this.series = []

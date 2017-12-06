@@ -22,26 +22,40 @@ export default {
   watch: {
     data (val) {
       this.$nextTick(() => {
-        if (this['colors']) {
-          this.chart.options['colors'] = Converter.toObject(this['colors'])
+        if (this.data && this.data.length > 0 && !this.chart) {
+          this.createChart ()
         }
 
-        this.chart.setData(Converter.toObject(this.data))
+        if (this.chart) {
+          if (this['colors']) {
+            this.chart.options['colors'] = Converter.toObject(this['colors'])
+          }
+
+          this.chart.setData(Converter.toObject(this.data))
+        }
       })
     }
   },
   
   mounted () {
-    let options = {
-      element: this.id,
-      data: Converter.toObject(this.data),
-      resize: Converter.toBoolean(this.resize)
+    if (this.data && this.data.length > 0) {
+      this.createChart()
     }
+  },
 
-    this.addOptionAsObject('colors', options)
-    this.addOption('formatter', options)
+  methods: {
+    createChart () {
+      let options = {
+        element: this.id,
+        data: Converter.toObject(this.data),
+        resize: Converter.toBoolean(this.resize)
+      }
 
-    this.chart = Morris.Donut(options)
+      this.addOptionAsObject('colors', options)
+      this.addOption('formatter', options)
+
+      this.chart = Morris.Donut(options)
+    }
   }
 }
 </script>
