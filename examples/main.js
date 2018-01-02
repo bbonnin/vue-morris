@@ -105,6 +105,34 @@ new Vue({
     onLineHover (index, options, content, row) {
       // console.log('onLineHover: ', index, options, content, row)
       return content
+    },
+
+    osColor (row, series, type) {
+      //console.log(row.y, series.key)
+
+      if (series.key === 'and') {
+        if (row.y >= 30) return '#FF6384'
+        if (row.y >= 15) return '#CC6384'
+        return '#996384'
+      }
+
+      if (series.key === 'ios') {
+        return '#36A2EB'
+      }
+
+      return '#FFCE56'
+    },
+
+    lineColor (row, series, type) {
+      //console.log(row, series, type)
+
+      if (type === 'point') {
+        if (row.y[series] < 10) {
+          return '#F00'
+        }
+      }
+
+      return this.lineColors[series]
     }
   }
 

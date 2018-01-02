@@ -26,7 +26,8 @@
               <h3>Bar Chart</h3>
               <bar-chart 
                 id="bar" :data="barData" xkey="year" ykeys='[ "and", "ios", "win" ]' resize="true"
-                labels='[ "Android", "iOS", "Windows" ]' bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]'
+                labels='[ "Android", "iOS", "Windows" ]' :bar-colors="osColor"
+                _bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]'
                 grid="true" grid-text-weight="bold" hide-hover="auto">
               </bar-chart>
             </div>
@@ -43,7 +44,7 @@
     ]'
   xkey="year"
   ykeys='[ "and", "ios", "win" ]'
-  bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]' 
+  :bar-colors="osColor"
   grid="true"
   grid-text-weight="bold"
   resize="true"
@@ -58,13 +59,14 @@
         <div class="col-xs-12 panel panel-default">
           <div class="panel-body">
             <div class="col-sm-6">
-              <h3>Line Chart <small>(with values modified every 5 seconds)</small></h3>
+              <h3>Line Chart <small>(with values modified every 5 seconds and colors depending on the values)</small></h3>
               <line-chart 
                 id="line" xkey="year" resize="true" 
                 :labels="labels"
                 :data="lineData"
                 :ykeys="series"
-                :line-colors="lineColors"
+                _line-colors="lineColors"
+                :line-colors="lineColor"
                 :hover-callback="onLineHover"
                 grid="true" grid-text-weight="bold" events='[ "2010 " ]' event-stroke-width="5" event-line-colors='[ "#ff0000" ]'>
               </line-chart>
@@ -74,22 +76,33 @@
                 <code class="xml">
 &lt;line-chart 
   id="line"
-  data='[
-      { "year": "2013", "a": 10, "b": 5 },
-      { "year": "2014", "a": 40, "b": 15 },
-      { "year": "2015", "a": 20, "b": 25 },
-      { "year": "2016", "a": 30, "b": 20 },
-    ]'
+  :data="lineData"
+  :labels="labels"
   xkey="year"
-  ykeys='[ "a", "b" ]'
-  line-colors='[ "#FF6384", "#36A2EB" ]' 
+  :ykeys="series"
+  :line-colors="lineColor"
   grid="true"
   grid-text-weight="bold"
-  events='[ "2015 " ]'
+  events='[ "2010 " ]'
   event-stroke-width="5"
   event-line-colors='[ "#ff0000" ]'
   resize="true"&gt;
 &lt;/line-chart&gt;
+
+&lt;script&gt;
+new Vue({
+  data: {
+    lineData: [ { ... }, { ... }, ... ],
+    labels: [ ... ],
+    series: [ ... ]
+  },
+  components: { LineChart },
+  methods: {
+    lineColor (row, series, type) {
+      ...
+  }
+})
+&lt;/script&gt;
                 </code>
               </pre>
             </div>

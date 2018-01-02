@@ -6,7 +6,7 @@ import Converter from '../util/converter'
 const Props = {
   id: { type: String, required: true }, 
   data: { type: [ String, Array ], required: true },
-  barColors: { type: [ String, Array ], required: false },
+  barColors: { type: [ String, Array, Function ], required: false },
   xkey: { type: String, required: false, default: 'key' },
   ykeys: { type: [ String, Array ], required: false, default: function _default() { return ['value']; }},
   labels: { type: [ String, Array ], required: false, default: function _default() { return ['Value']; }},
@@ -24,7 +24,7 @@ const Props = {
   colors: { type: [ String, Array ], required: false },
   formatter: { type: Function, required: false },
 
-  lineColors: { type: [ String, Array ], required: false },
+  lineColors: { type: [ String, Array, Function ], required: false },
   xLabels: { type: String, required: false },
   lineWidth: { type: [ Number, String ], required: false },
   pointSize: { type: [ Number, String ], required: false },
