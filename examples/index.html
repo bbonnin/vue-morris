@@ -26,7 +26,7 @@
               <h3>Bar Chart</h3>
               <bar-chart 
                 id="bar" :data="barData" xkey="year" ykeys='[ "and", "ios", "win" ]' resize="true"
-                labels='[ "Android", "iOS", "Windows" ]' :bar-colors="osColor"
+                labels='[ "Android", "iOS", "Windows" ]' :bar-colors="osColor" horizontal="true"
                 _bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]'
                 grid="true" grid-text-weight="bold" hide-hover="auto">
               </bar-chart>

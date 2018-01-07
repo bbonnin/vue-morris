@@ -45,6 +45,7 @@ export default {
       ykeys: Converter.toObject(this.ykeys),
       axes: Converter.toBoolean(this.axes),
       hideHover: this.hideHover,
+      horizontal: Converter.toBoolean(this.horizontal),
       stacked: Converter.toBoolean(this.stacked),
       grid: Converter.toBoolean(this.grid),
       gridTextColor: this.gridTextColor,
