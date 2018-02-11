@@ -44,6 +44,8 @@ export default {
       xkey: this.xkey,
       ykeys: Converter.toObject(this.ykeys),
       axes: Converter.toBoolean(this.axes),
+      ymax: this.ymax,
+      ymin: this.ymin,
       hideHover: this.hideHover,
       horizontal: Converter.toBoolean(this.horizontal),
       stacked: Converter.toBoolean(this.stacked),

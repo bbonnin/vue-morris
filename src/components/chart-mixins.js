@@ -69,6 +69,8 @@ const BarProps = {
   hideHover: Props.hideHover,
   stacked: Props.stacked,
   resize: Props.resize,
+  ymax: Props.ymax,
+  ymin: Props.ymin,
   gridTextColor: Props.gridTextColor,
   gridTextSize: Props.gridTextSize,
   gridTextFamily: Props.gridTextFamily,
