@@ -123,6 +123,10 @@ new Vue({
       return '#FFCE56'
     },
 
+    percentFormat (val) {
+      return val + '%'
+    },
+
     lineColor (row, series, type) {
       //console.log(row, series, type)
 

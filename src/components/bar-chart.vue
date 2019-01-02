@@ -59,6 +59,8 @@ export default {
     }
 
     this.addOptionAsObject('barColors', options)
+    this.addOption('xLabelFormat', options)
+    this.addOption('yLabelFormat', options)
     this.addOption('hoverCallback', options)
 
     this.chart = Morris.Bar(options)

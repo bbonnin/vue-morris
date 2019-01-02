@@ -62,6 +62,8 @@ const BarProps = {
   xkey: Props.xkey,
   ykeys: Props.ykeys,
   labels: Props.labels,
+  xLabelFormat: Props.xLabelFormat,
+  yLabelFormat: Props.yLabelFormat,
   hoverCallback: Props.hoverCallback,
   grid: Props.grid,
   horizontal: Props.horizontal,
