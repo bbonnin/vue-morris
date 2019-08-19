@@ -54,6 +54,7 @@ export default {
       gridTextSize: Converter.toInt(this.gridTextSize),
       gridTextFamily: this.gridTextFamily,
       gridTextWeight: this.gridTextWeight,
+      xLabelAngle: this.xLabelAngle,
       lineWidth: this.lineWidth,
       pointSize: this.pointSize
     }

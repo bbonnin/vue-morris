@@ -25,8 +25,8 @@
             <div class="col-sm-6">
               <h3>Bar Chart</h3>
               <bar-chart 
-                id="bar" :data="barData" xkey="year" ykeys='[ "and", "ios", "win" ]' resize="true"
-                labels='[ "Android", "iOS", "Windows" ]' :bar-colors="osColor" horizontal="true"
+                id="bar" :data="barData" xkey="year" x-label-angle="45" ykeys='[ "and", "ios", "win" ]' resize="true"
+                labels='[ "Android", "iOS", "Windows" ]' :bar-colors="osColor" 
                 _bar-colors='[ "#FF6384", "#36A2EB", "#FFCE56" ]'
                 :y-label-format="percentFormat"
                 grid="true" grid-text-weight="bold" hide-hover="auto">
