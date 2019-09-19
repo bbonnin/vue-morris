@@ -14,7 +14,7 @@ Use npm
 npm install vue-morris --save
 ```
 
-Do not forget to declare jQuery. For example, if you are using Webpack, you should have something like that in your `webpack.config.js` 
+Do not forget to declare jQuery in your `package.json` and, if you are using Webpack, you should have something like that in your `webpack.config.js` 
 
 ```javascript
 resolve: {
