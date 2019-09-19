@@ -1,7 +1,7 @@
 {
   "name": "vue-morris",
   "description": "Vue.js component wrapping Morris.js lib",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": "Bruno Bonnin <bbonnin@gmail.com>",
   "private": false,
   "keywords": [
